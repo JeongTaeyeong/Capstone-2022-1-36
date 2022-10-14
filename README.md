@@ -25,3 +25,14 @@
 
 ### 5. 설치 및 사용법
 
+#### 개발환경
+MongoDB v5.0.8
+Vue.js v2.7.8
+Node.js v16.15.1
+환경변수 지정 필요
+
+```
+$ ./install.sh
+$ ./build1.sh
+$ ./build2.sh
+```
