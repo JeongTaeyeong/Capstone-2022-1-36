@@ -1,0 +1,37 @@
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+const crypto = require('crypto');
+
+
+const doneManage = new Schema({ // 봉사시간 갱신 신청 관리 DB
+    index: Number, // 신청 번호
+    nickname: String, // 신청자 닉네임
+    doneIss: String, // 봉사시간 인증서
+    doneNum: Number, // 신청 봉사시간
+    state: {type: String, default: "대기"}, // 신청 상태(대기, 수락, 거부)
+    username: String // 신청자 이름
+});
+
+doneManage.statics.newApply = function({index,doneNum,doneIss,nickname,username}){ // 신청 문서 생성
+    const user = new this({index,doneNum,doneIss,nickname,username});
+    console.log(user);
+    return user.save();
+};
+
+doneManage.statics.allowApply = function({index,doneTime}){
+    this.updateOne({index},{$set: {state: "수락"}}).exec();
+};
+
+doneManage.statics.denyApply = function(index){
+    this.updateOne({index},{$set: {state: "거부"}}).exec();
+};
+
+doneManage.statics.viewApply = function(index){
+    return this.find({"state": "대기"}).sort({index:1}).exec();
+};
+
+doneManage.statics.getCount = function(){
+    return this.count();
+}
+
+module.exports = mongoose.model('doneManage', doneManage);

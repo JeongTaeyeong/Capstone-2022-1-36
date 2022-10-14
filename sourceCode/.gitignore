@@ -1,0 +1,17 @@
+
+.DS_Store
+/node_modules/
+/dist/
+/myFile/
+npm-debug.log
+yarn-error.log
+.env
+/tmp/uploads/
+/tmp/nft/
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
