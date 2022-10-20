@@ -32,7 +32,7 @@
 
 <!--[![영상 이름](유튜브 영상 썸네일 URL)](유투브 영상 URL)-->
 <!-- [![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE) -->
-
+[![36조](http://img.youtube.com/vi/pw6HYkqbuCg/0.jpg)](https://www.youtube.com/watch?v=pw6HYkqbuCg)
 
 ### 5. 설치 및 사용법
 
